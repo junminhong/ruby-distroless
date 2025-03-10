@@ -11,9 +11,10 @@ ARG LIB_CRYPT_PATH
 ARG LIB_GCC_PATH
 ARG LD_LIB_PATH
 
-COPY --from=builder /usr/local/bin/ruby /usr/local/bin/ruby
 COPY --from=builder /usr/local/lib/libruby.so.${RUBY_MAJOR_MINOR} /usr/local/lib/libruby.so.${RUBY_MAJOR_MINOR}
+COPY --from=builder /usr/local/bin/ruby /usr/local/bin/ruby
 COPY --from=builder /usr/local/lib/ruby /usr/local/lib/ruby
+COPY --from=builder /usr/local/bin/bundle /usr/local/bin/bundle
 
 COPY --from=builder ${LIB_Z_PATH} ${LIB_Z_PATH}
 COPY --from=builder ${LIB_GMP_PATH} ${LIB_GMP_PATH}

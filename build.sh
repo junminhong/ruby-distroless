@@ -35,7 +35,7 @@ for ver in "${ruby_versions[@]}"; do
   else
     extra_args="--load"
   fi
-  TAG_PLATFORM=$(echo "${platform}" | tr '/' '-')
+  TAG_PLATFORM=${platform#*/}
   docker buildx build \
     --platform "${platform}" \
     --build-arg RUBY_VERSION="${RUBY_VERSION}" \
