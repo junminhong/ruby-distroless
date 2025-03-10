@@ -27,14 +27,20 @@ Ruby Distroless 是一個開源專案，旨在利用 Google 的 [distroless](htt
 你可以從 [GitHub Container Registry (GHCR)](https://ghcr.io) 拉取構建好的映像。例如，要拉取 Ruby 3.3.7 版本的 amd64 映像：
 
 ```bash
-docker pull ghcr.io/junminhong/ruby-distroless:3.3.7-linux/amd64
+# amd64
+docker pull ghcr.io/junminhong/ruby-distroless:3.3.7-amd64
+# arm65
+docker pull ghcr.io/junminhong/ruby-distroless:3.3.7-arm64
 ```
 
 ## 使用方式
 你可以直接使用該映像來運行 Ruby 程式。例如：
 
 ```bash
-docker run --rm ghcr.io/junminhong/ruby-distroless:3.3.7-linux/amd64 ruby -v
+# amd64
+docker run --rm ghcr.io/junminhong/ruby-distroless:3.3.7-amd64 ruby -v
+# arm65
+docker run --rm ghcr.io/junminhong/ruby-distroless:3.3.7-arm64 ruby -v
 ```
 
 這將顯示 Ruby 版本資訊。如果你需要在容器中運行其他 Ruby 程式，請參考 Docker 的 [CMD 指令](https://docs.docker.com/engine/reference/builder/#cmd) 進行調整。

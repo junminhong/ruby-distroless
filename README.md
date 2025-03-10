@@ -29,14 +29,20 @@ The supported Ruby versions range from Ruby 2.5 to Ruby 3.4, specifically includ
 You can pull pre-built images from [GitHub Container Registry (GHCR)](https://ghcr.io). For example, to pull the Ruby 3.3.7 amd64 image:
 
 ```bash
-docker pull ghcr.io/junminhong/ruby-distroless:3.3.7-linux/amd64
+# amd64
+docker pull ghcr.io/junminhong/ruby-distroless:3.3.7-amd64
+# arm65
+docker pull ghcr.io/junminhong/ruby-distroless:3.3.7-arm64
 ```
 
 ## Usage
 You can run Ruby directly using this image:
 
 ```bash
-docker run --rm ghcr.io/junminhong/ruby-distroless:3.3.7-linux/amd64 ruby -v
+# amd64
+docker run --rm ghcr.io/junminhong/ruby-distroless:3.3.7-amd64 ruby -v
+# arm65
+docker run --rm ghcr.io/junminhong/ruby-distroless:3.3.7-arm64 ruby -v
 ```
 
 This will display the Ruby version. If you need to run other Ruby programs inside the container, refer to Docker's [CMD instruction](https://docs.docker.com/engine/reference/builder/#cmd).
