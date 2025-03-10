@@ -8,6 +8,17 @@ Ruby Distroless is an open-source project designed to create a minimal and secur
 
 This project enables you to easily build lightweight Ruby images supporting multiple platforms (e.g., amd64 and arm64) and multiple Ruby versions. It is optimized for production deployments, reducing security risks and minimizing image size.
 
+## Supported Ruby Versions
+The supported Ruby versions range from Ruby 2.5 to Ruby 3.4, specifically including:
+- Ruby 2.5.9
+- Ruby 2.6.10
+- Ruby 2.7.8
+- Ruby 3.0.7
+- Ruby 3.1.6
+- Ruby 3.2.7
+- Ruby 3.3.7
+- Ruby 3.4.2
+
 ## Features
 - **Minimal and Secure**: Built on distroless images, including only necessary runtime dependencies, avoiding unnecessary tools that may introduce security risks.
 - **Multi-Platform Support**: Utilizes Docker Buildx to build images for both amd64 and arm64 architectures.

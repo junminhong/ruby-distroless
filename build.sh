@@ -35,7 +35,7 @@ for ver in "${ruby_versions[@]}"; do
   else
     extra_args="--load"
   fi
-
+  TAG_PLATFORM=$(echo "${platform}" | tr '/' '-')
   docker buildx build \
     --platform "${platform}" \
     --build-arg RUBY_VERSION="${RUBY_VERSION}" \
@@ -45,7 +45,7 @@ for ver in "${ruby_versions[@]}"; do
     --build-arg LIB_CRYPT_PATH="${LIB_CRYPT_PATH}" \
     --build-arg LIB_GCC_PATH="${LIB_GCC_PATH}" \
     --build-arg LD_LIB_PATH="${LD_LIB_PATH}" \
-    -t "${image_name}:${RUBY_VERSION}-${platform}" \
+    -t "${image_name}:${RUBY_VERSION}-${TAG_PLATFORM}" \
     ${extra_args} \
     .
 

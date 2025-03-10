@@ -13,6 +13,9 @@ jobs:
       matrix:
         include:
           - platform: "linux/amd64"
+            ruby_version: "2.5.9"
+            ruby_major_minor: "2.5"
+          - platform: "linux/amd64"
             ruby_version: "2.6.10"
             ruby_major_minor: "2.6"
           - platform: "linux/amd64"
@@ -34,6 +37,9 @@ jobs:
             ruby_version: "3.4.2"
             ruby_major_minor: "3.4"
           # arm64
+          - platform: "linux/arm64"
+            ruby_version: "2.5.9"
+            ruby_major_minor: "2.5"
           - platform: "linux/arm64"
             ruby_version: "2.6.10"
             ruby_major_minor: "2.6"
@@ -88,13 +94,20 @@ jobs:
             echo "LD_LIB_PATH=/usr/local/lib:/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu" >> $GITHUB_ENV
           fi
 
+      - name: Convert platform tag
+        id: convert
+        run: |
+          TAG_PLATFORM="${{ matrix.platform }}"
+          TAG_PLATFORM=${TAG_PLATFORM/linux\//}
+          echo "tag_platform=$TAG_PLATFORM" >> $GITHUB_OUTPUT
+
       - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
           file: Dockerfile
           platforms: ${{ matrix.platform }}
-          tags: ghcr.io/junminhong/ruby-distroless:${{ matrix.ruby_version }}-${{ matrix.platform }}
+          tags: ghcr.io/junminhong/ruby-distroless:${{ matrix.ruby_version }}-${{ steps.convert.outputs.tag_platform }}
           build-args: |
             RUBY_VERSION=${{ matrix.ruby_version }}
             RUBY_MAJOR_MINOR=${{ matrix.ruby_major_minor }}

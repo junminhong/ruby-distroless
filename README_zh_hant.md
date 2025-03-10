@@ -6,6 +6,17 @@ Ruby Distroless 是一個開源專案，旨在利用 Google 的 [distroless](htt
 
 透過本專案，你可以輕鬆構建支援多平台（如 amd64 與 arm64）及多個 Ruby 版本的最小化映像，適用於生產環境部署，降低安全風險並縮小映像體積。
 
+## 目前支援的 Ruby 版本
+範圍為 Ruby 2.5 至 Ruby 3.4，具體包括：
+- Ruby 2.5.9
+- Ruby 2.6.10
+- Ruby 2.7.8
+- Ruby 3.0.7
+- Ruby 3.1.6
+- Ruby 3.2.7
+- Ruby 3.3.7
+- Ruby 3.4.2
+
 ## 特色
 - **精簡安全**：基於 distroless 映像，僅包含運行 Ruby 所需的依賴庫，避免多餘工具帶來的潛在風險。
 - **多平台支援**：利用 Docker Buildx 同時構建 amd64 與 arm64 映像。
