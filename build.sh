@@ -12,10 +12,10 @@ if [ "$platform" = "linux/arm64" ]; then
   LIB_GCC_PATH="/lib/aarch64-linux-gnu/libgcc_s.so.1"
   LD_LIB_PATH="/usr/local/lib:/lib/aarch64-linux-gnu:/usr/lib/aarch64-linux-gnu"
 else
-  LIB_Z_PATH="/usr/lib/x86_64-linux-gnu/libz.so.1"
+  LIB_Z_PATH="/lib/x86_64-linux-gnu/libz.so.1"
   LIB_GMP_PATH="/usr/lib/x86_64-linux-gnu/libgmp.so.10"
   LIB_CRYPT_PATH="/lib/x86_64-linux-gnu/libcrypt.so.1"
-  LIB_GCC_PATH="/usr/lib/x86_64-linux-gnu/libgcc_s.so.1"
+  LIB_GCC_PATH="/lib/x86_64-linux-gnu/libgcc_s.so.1"
   LD_LIB_PATH="/usr/local/lib:/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu"
 fi
 
